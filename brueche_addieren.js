@@ -1,132 +1,116 @@
-let bruch1 = "3 3/4";
-let bruch2 = "6 4/5";
 
-function string2bruch(bruch)
+
+class Bruch 
+{
+    constructor(ganz, zaehler, nenner) 
+    {
+        if (nenner === 0) throw new Error('Nenner darf nicht 0 sein!');
+        this.ganz = ganz;
+        this.zaehler = zaehler;
+        this.nenner = nenner;
+        this.kuerzen();
+    }
+
+    toString() 
+    {
+        if (this.zaehler === 0) return `${this.ganz}`;
+        if (this.ganz === 0) return `${this.zaehler}/${this.nenner}`;
+        return `${this.ganz} ${this.zaehler}/${this.nenner}`;
+    }
+
+    erweitern(faktor) 
+    {
+        return new Bruch(this.ganz, this.zaehler * faktor, this.nenner * faktor);
+    }
+
+    kuerzen() 
+    {
+        if (this.zaehler === 0) return;
+        let g = Bruch.ggt(this.zaehler, this.nenner);
+        this.zaehler = this.zaehler / g;
+        this.nenner = this.nenner / g;
+        // Falls Zähler >= Nenner, in ganze Zahl umwandeln
+        if (this.zaehler >= this.nenner) 
+        {
+            this.ganz += Math.floor(this.zaehler / this.nenner);
+            this.zaehler = this.zaehler % this.nenner;
+        }
+    }
+
+    static ggt(a, b) 
+    {
+        a = Math.abs(a); b = Math.abs(b);
+        while (b !== 0) 
+        {
+            let t = b;
+            b = a % b;
+            a = t;
+        }
+        return a;
+    }
+
+    static kgv(a, b) 
+    {
+        return Math.abs(a * b) / Bruch.ggt(a, b);
+    }
+
+    addiere(b2) 
+    {
+        // Beide Brüche auf denselben Nenner bringen
+        let kgv = Bruch.kgv(this.nenner, b2.nenner);
+        let z1 = (this.ganz * this.nenner + this.zaehler) * (kgv / this.nenner);
+        let z2 = (b2.ganz * b2.nenner + b2.zaehler) * (kgv / b2.nenner);
+        let summe = z1 + z2;
+        let ganz = Math.floor(summe / kgv);
+        let zaehler = summe % kgv;
+        let res = new Bruch(ganz, zaehler, kgv);
+        res.kuerzen();
+        return res;
+    }
+}
+
+let bruch1str = "3 3/4";
+let bruch2str = "6 4/5";
+
+
+
+function string2bruch(bruch) 
 {
     const splitter = bruch.split(" ");
-    if (splitter.length == 2)
+    if (splitter.length === 2) 
     {
-       const bruchsplitter = splitter[1].split("/");
-
-        let ganz = Number(splitter[0]);
-        let zaehler = Number(bruchsplitter[0]);
-        let nenner = Number(bruchsplitter[1]);
-            return[ganz, zaehler, nenner];  
-    }
-    else if (splitter.length == 1)
+        const bruchsplitter = splitter[1].split("/");
+        return new Bruch(
+            Number(splitter[0]),
+            Number(bruchsplitter[0]),
+            Number(bruchsplitter[1])
+        );
+    } 
+    else if (splitter.length === 1) 
     {
         const bruchsplitter = bruch.split("/");
-        if (bruchsplitter.length == 2)
+        if (bruchsplitter.length === 2) 
         {
-            let zaehler = Number(bruchsplitter[0]);
-            let nenner = Number(bruchsplitter[1]);
-            let ganz = 0;
-            return[ganz, zaehler, nenner];
-        }
-        else if (splitter.length == 1)
-        {
-           let ganz = Number(splitter[0]);
-           let zaehler = 0;
-           let nenner = 1;
-
-            return[ganz, zaehler, nenner];
-        }
-    }
-    else
-    {
-        throw("Eingabefehler");
-    }
-}
-
-bs1 = string2bruch(bruch1);
-bs2 = string2bruch(bruch2);
-
-let r = 1;
-let r1
-let r2
-let kgv
-for (let i=1; r==1; i++)
-{
-    r1 = i % bs1[2];
-    r2 = i % bs2[2];
-
-    if (r1 == 0 && r2 == 0)
-    {
-        r = 0;
-        kgv = i;
-    }
-}
-
-function multiplikator (bruch, klgevi)
-{
-    m = klgevi / bruch[2];
-    return [bruch[0], bruch[1] * m, klgevi]   ;
-}
-
-r = 1;
-function ggt (a, b)
-{
-    if (a < b)
-    {
-        for (let i = a; r==1; i--)
-        {
-            if (a % i == 0 && b % i == 0)
-            {
-                r = 0;
-                return i;
-            }
-
-        }
-    }
-    else
-    {
-       for (let i = b; r==1; i--)
-        {
-            if (a % i == 0 && b % i == 0)
-            {
-                r = 0;
-                return i;
-            }
-
+            return new Bruch(0, Number(bruchsplitter[0]), Number(bruchsplitter[1]));
         } 
-    }  
-
-}
-
-let bs1m = multiplikator(bs1, kgv);
-let bs2m = multiplikator(bs2, kgv);
-let summe_ge = bs1m[1] + bs2m[1];
-
-//console.log(kgv);
-//console.log(bs1m);       --Zur Überprüfung--
-//console.log(bs2m);
-//console.log(summe_ge);
-
-function summe_ga (bruch1, bruch2, kgv_2)
-{
-    if (summe_ge >= kgv_2)
-    {
-        let ganz = Math.floor(summe_ge/ kgv_2) + bruch1[0] + bruch2[0];
-        let zaehler = summe_ge % kgv_2;
-         while (zaehler >= kgv_2)
+        else if (splitter.length === 1) 
         {
-            ganz = zaehler % kgv_2 + bruch1[0] + bruch2[0];
-            zaehler = zaehler - kgv_2;
+            return new Bruch(Number(splitter[0]), 0, 1);
         }
-        if (kgv_2 % zaehler == 0 && zaehler !== 0)
-        {
-            let dividor = ggt(zaehler, kgv_2);
-            zaehler = zaehler / dividor;
-            kgv_2 = kgv_2 / dividor;
-        }
-        return [ganz, zaehler, kgv_2];
-    }
-    else
+    } 
+    else 
     {
-        let ganz = bruch1[0] + bruch2[0];
-        let zaehler = summe_ge;
-        return [ganz, zaehler, kgv_2];
+        throw new Error("Eingabefehler");
     }
 }
-let ganze_summe = summe_ga(bs1m, bs2m, kgv);
-console.log(ganze_summe[0], ganze_summe[1]+"/"+ ganze_summe[2]);
+
+
+
+let bs1 = string2bruch(bruch1str);
+let bs2 = string2bruch(bruch2str);
+
+
+
+// Addition objektorientiert:
+let summe = bs1.addiere(bs2);
+console.log(summe.toString());
