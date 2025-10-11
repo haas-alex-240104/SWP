@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "dev": "deno run --watch random_brueche.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}
