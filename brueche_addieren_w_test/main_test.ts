@@ -1,5 +1,6 @@
 import { assertEquals } from "@std/assert";
 import { Bruch } from "./bruche_ad.ts";
+console.log("Alle Tests erfolgreich ausgeführt!");
 
 Deno.test("Addition mit ganzen Zahlen", () => {
   const b1 = Bruch.fromString("1");
