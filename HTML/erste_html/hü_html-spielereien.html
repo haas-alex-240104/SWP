@@ -26,17 +26,10 @@
 <body>
     <h1>Alex Haas Hü</h1>
     <div>
-        <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" />
+        <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1">
         <label for="volume">Volume</label>
     </div>
-    <script>
-    const audio = document.getElementById('audio');
-    const volumeControl = document.getElementById('volume');
 
-    volumeControl.addEventListener('input', () => {
-      audio.volume = volumeControl.value;
-    });
-  </script>
     <img src="https://i.scdn.co/image/ab67616d0000b2730412a482b98670e4d98a55fd" alt="Album Cover" width="300" height="300">
     <details>
     <summary>The Boy Who Died Wolf - Highly Suspect</summary>
@@ -44,20 +37,88 @@
         <li>
             My Name Is Human 
             <audio controls>
-                <source src="Highly Suspect 01 My Name Is Human.mp3" type="audio/mpeg">
+                <source src="Highly_Suspect_01_My_Name_Is_Human.mp3" type="audio/mpeg">
             </audio>
         </li>
-        <li>Look Alive, Stay Alive</li>
-        <li>Little One</li>
-        <li>For Billy</li>
-        <li>Serotonia</li>
-        <li>Postres</li>
-        <li>Send Me an Angel</li>
-        <li>Viper Strike</li>
-        <li>F.W.Y.T.</li>
-        <li>Chicago</li>
-        <li>Wolf</li>
+        <li>
+            Look Alive, Stay Alive
+            <audio controls>
+                <source src="Highly_Suspect_02_Look_Alive,_Stay_Alive.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Little One
+            <audio controls>
+                <source src="Highly_Suspect_03_Little_One.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            For Billy
+            <audio controls>
+                <source src="Highly_Suspect_04_For_Billy.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Serotonia
+            <audio controls>
+                <source src="Highly_Suspect_05_Serotonia.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Postres
+            <audio controls>
+                <source src="Highly_Suspect_06_Postres.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Send Me an Angel
+            <audio controls>
+                <source src="Highly_Suspect_07_Send_Me_an_Angel.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Viper Strike
+            <audio controls>
+                <source src="Highly_Suspect_08_Viper_Strike.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            F.W.Y.T.
+            <audio controls>
+                <source src="Highly_Suspect_09_F.W.Y.T.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>Chicago
+            <audio controls>
+                <source src="Highly_Suspect_10_Chicago.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Wolf
+            <audio controls>
+                <source src="Highly_Suspect_11_Wolf.mp3" type="audio/mpeg">
+            </audio>
+        </li>
     </ol>
 </details>
+
+<script>
+// wait until DOM is ready so all <audio> elements exist
+document.addEventListener('DOMContentLoaded', () => {
+  const volumeControl = document.getElementById('volume');
+  const audios = document.querySelectorAll('audio');
+
+  // set initial volume for all audio elements from the control's value
+  const initialVolume = parseFloat(volumeControl.value) || 1;
+  audios.forEach(a => { a.volume = initialVolume; });
+
+  // update volume of all audio elements when slider changes
+  volumeControl.addEventListener('input', () => {
+    const v = parseFloat(volumeControl.value);
+    audios.forEach(a => { a.volume = v; });
+  });
+});
+</script>
+
 </body>
 </html>
