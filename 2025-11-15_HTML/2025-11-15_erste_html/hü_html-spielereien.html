@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <h1>mini MP3-Player</h1>
-    <div>
+    <div class="volume-control">
         <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1">
         <label for="volume">Volume</label>
     </div>
+
+<div class="flex">
+<div id="The_Boy_Who_Died_Wolf">
 
     <img src="https://i.scdn.co/image/ab67616d0000b2730412a482b98670e4d98a55fd" alt="Album Cover" width="300" height="300">
     <details>
@@ -85,7 +89,90 @@
         </li>
     </ol>
 </details>
+</div>
 
+<div id="Showbiz">
+
+    <img src="https://i.scdn.co/image/ab67616d0000b27334dd1b3a44cccef2d3c8bfce" alt="Album Cover" width="300" height="300">
+    <details>
+    <summary>Showbiz - MUSE</summary>
+    <ol>
+        <li>
+            Sunburn 
+            <audio controls>
+                <source src="Muse 01 Sunburn.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Muscle Museum
+            <audio controls>
+                <source src="Muse_02_Muscle_Museum.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Fillip
+            <audio controls>
+                <source src="Muse_03_Fillip.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Falling Down
+            <audio controls>
+                <source src="Muse_04_Falling_Down.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Cave
+            <audio controls>
+                <source src="Muse_05_Cave.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Showbiz
+            <audio controls>
+                <source src="Muse_06_Showbiz.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Unintended
+            <audio controls>
+                <source src="Muse_07_Unintended.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Uno
+            <audio controls>
+                <source src="Muse_08_Uno.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Sober
+            <audio controls>
+                <source src="Muse_09_Sober.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Escape
+            <audio controls>
+                <source src="Muse_10_Escape.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Overdue
+            <audio controls>
+                <source src="Muse_11_Overdue.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+        <li>
+            Hate This and I'll Love You
+            <audio controls>
+                <source src="Muse_12_Hate_This_and_I'll_Love_You.mp3" type="audio/mpeg">
+            </audio>
+        </li>
+    </ol>
+</details>
+</div>
+</div>
 <script>
 // wait until DOM is ready so all <audio> elements exist
 document.addEventListener('DOMContentLoaded', () => {
