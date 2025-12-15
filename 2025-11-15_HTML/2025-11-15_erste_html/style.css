@@ -8,10 +8,6 @@ p {
 	color: #001fAf;
 }
 
-li {
-    color: #ffffff;
-}
-
 h1 {
     color: #449bff;
 	width: 100%;
@@ -34,6 +30,10 @@ audio {
     max-height: 100%; 
 
     margin-right: 0.4rem;
+}
+
+li {
+    color: #ffffff;
 }
 
 ol {
@@ -71,14 +71,6 @@ ol li::before {
 	width: 100%;
 	max-width: 720px;
 	margin: 0 auto 1rem;
-}
-
-#Heading {
-	position: absolute;
-	margin-top: 10px;
-	left: 50%;
-	transform: translateY(-50%);
-	transform: translateX(-50%);
 }
 
 .flex {
