@@ -32,10 +32,6 @@ audio {
     margin-right: 0.4rem;
 }
 
-li {
-    color: #ffffff;
-}
-
 ol {
 	display: flex;
 	flex-direction: column;
@@ -48,6 +44,7 @@ ol {
 }
 
 ol li {
+	color: #ffffff;
 	display: flex;
 	align-items: center;
 	gap: 0.6rem;
