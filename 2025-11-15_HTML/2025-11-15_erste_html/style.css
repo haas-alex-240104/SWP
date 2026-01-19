@@ -76,3 +76,25 @@ ol li::before {
 	justify-content: center;
 	gap: 2rem;
 }
+
+summary:hover {
+	transition: 500ms;
+	color: #ffffff;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #09546b;
+	text-align: center;
+	padding: 0.5rem 0;
+	border-top: 1px solid #ffffff;
+	color: #ffffff;
+	font-size: 0.9rem;
+}
+
+footer p {
+	color: #ffffff;
+}
