@@ -2,7 +2,7 @@ const persons = [
   { name: "Marie", age: 14, gender: "f" },
   { name: "Tim", age: 15, gender: "m" },
   { name: "Max", age: 15, gender: "m" },
-  { name: "Leonie", age: 13, gender: "f" },
+  { name: "Lena", age: 13, gender: "f" },
   { name: "Niki", age: 16, gender: "m" }
 ];
 
