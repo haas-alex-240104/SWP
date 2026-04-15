@@ -1,26 +1,32 @@
-// alter < 20 rejected
-// alter >= 20 resolved
-
-function checkAlter(alter) {
+function checkOven() {
     return new Promise((resolve, reject) => {
-        if (alter < 20) {
-            console.log("werde zu jung rejecten");
-            return reject("Zu jung");
+        const isOvenHot = true;
+        if (isOvenHot) {
+            resolve({ "success": true, "message": "Ofen ist bereit!" });
+        } else {
+            reject({ "success": false, "message": "Ofen ist defekt." });
         }
-        console.log("werde Eintritt erlauben");
-        return resolve("Eintritt erlaubt");
     });
-};
+}
 
-checkAlter(19)
-    .then((r) => {
-        console.log(`im then handler 19, r = ${r}`);
-    })
-    .catch((e) => { console.error(`Fehler im 19: ${e}`); });
-checkAlter(20)
-    .then((r) => {
-        console.log(`im then handler 20, r = ${r}`);
-    })
-    .catch((e) => { console.error(`Fehler in 20: ${e}`); });
+function bakePizza(pizzaName) {
+    return new Promise((resolve, reject) => {
+        if (pizzaName === "") {
+            reject("Fehler: Keine Pizza ausgewählt.");
+        } else {
+            resolve("Pizza " + pizzaName + " ist fertig gebacken!");
+        }
+    });
+}
 
-console.log("promises erstellt");
+checkOven()
+    .then((result) => {
+        console.log(result.message);
+        return bakePizza("Margherita");
+    })
+    .then((msg) => {
+        console.log(msg);
+    })
+    .catch((err) => {
+        console.error("Pizza-Bestellung gescheitert:", err);
+    });

@@ -1,11 +1,15 @@
 export class Bruch {
-  // Attribute:
   ganz: number;
   zähler: number;
   nenner: number;
 
-  // Constructor
   constructor(ganz: number, zähler: number, nenner: number) {
+    if (nenner === 0) {
+      throw new Error("Nenner darf nicht 0 sein!");
+    }
+    if (typeof ganz !== "number" || typeof zähler !== "number" || typeof nenner !== "number") {
+      throw new Error("Alle Parameter müssen Zahlen sein!");
+    }
     this.ganz = ganz;
     this.zähler = zähler;
     this.nenner = nenner;

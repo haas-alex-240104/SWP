@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Boxmodel Kreativ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>CSS Boxmodel Demo</h1>
+
+        <div class="card card-mit-border">
+            <h2>Border Example</h2>
+            <p>Der Rahmen um dieses Element zeigt border: 5px solid #ff6b6b</p>
+            <div class="box box-border">Ich habe Border</div>
+        </div>
+
+        <div class="card card-padding">
+            <h2>Padding Example</h2>
+            <p>padding: 40px erzeugt Innenabstand</p>
+            <div class="box box-padding">Ich habe Padding</div>
+        </div>
+
+        <div class="card card-margin">
+            <h2>Margin Example</h2>
+            <p>margin: 30px erzeugt Außenabstand</p>
+            <div class="box box-margin">Ich habe Margin</div>
+        </div>
+
+        <div class="card card-kombi">
+            <h2>Kombiniert: Border + Padding + Margin</h2>
+            <p>Alles zusammen für komplexe Layouts</p>
+            <div class="box box-kombi"> Kombiniert!</div>
+        </div>
+
+        <div class="card">
+            <h2>Calc mit Boxmodel</h2>
+            <p>width: calc(50% - 40px) berücksichtigt margin!</p>
+            <div class="flex-container">
+                <div class="demo-box">Box 1</div>
+                <div class="demo-box">Box 2</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Boxmodel Eigenschaften im Überblick</h2>
+            <table>
+                <tr>
+                    <th>Eigenschaft</th>
+                    <th>Beschreibung</th>
+                    <th>Beispiel</th>
+                </tr>
+                <tr>
+                    <td>margin</td>
+                    <td>Außenabstand</td>
+                    <td>margin: 20px</td>
+                </tr>
+                <tr>
+                    <td>padding</td>
+                    <td>Innenabstand</td>
+                    <td>padding: 15px</td>
+                </tr>
+                <tr>
+                    <td>border</td>
+                    <td>Rahmen</td>
+                    <td>border: 2px solid red</td>
+                </tr>
+                <tr>
+                    <td>width/height</td>
+                    <td>Größe</td>
+                    <td>width: 200px</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

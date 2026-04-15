@@ -3,5 +3,6 @@ document.getElementById("essenBtn").addEventListener("click", async () => {
     const daten = await response.json();
     
     const ergebnisDiv = document.getElementById("ergebnis");
-    ergebnisDiv.innerHTML = daten.map(d => `${d.name}: ${d.essen}`).join("<br>");
+    const tabelle = "<table>" + daten.map(d => `<tr><td>${d.name}</td><td>${d.essen}</td></tr>`).join("") + "</table>";
+    ergebnisDiv.innerHTML = tabelle;
 });

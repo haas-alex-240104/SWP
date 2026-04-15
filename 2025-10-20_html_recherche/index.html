@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Recherche</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HTML Recherche - MDN Referenz</h1>
+    
+    <div class="summary">
+        <h2>Quellen</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference">MDN HTML Reference</a></li>
+            <li><a href="https://selfhtml.org">SELFHTML</a></li>
+            <li><a href="https://www.w3schools.com">W3Schools</a></li>
+        </ul>
+    </div>
+    
+    <h2>1. Grundstruktur</h2>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="value">"de"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;head&gt;</span>
+        <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="value">"UTF-8"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="value">"viewport"</span> <span class="attr">content</span>=<span class="value">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;title&gt;</span>Seite<span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;/head&gt;</span>
+    <span class="tag">&lt;body&gt;</span>
+        ...
+    <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+    
+    <h2>2. Textstrukturierung</h2>
+    <ul>
+        <li><code>&lt;h1&gt;</code> bis <code>&lt;h6&gt;</code> - Überschriften</li>
+        <li><code>&lt;p&gt;</code> - Absatz</li>
+        <li><code>&lt;br&gt;</code> - Zeilenumbruch</li>
+        <li><code>&lt;hr&gt;</code> - Horizontale Linie</li>
+        <li><code>&lt;strong&gt;</code> - Wichtiger Text</li>
+        <li><code>&lt;em&gt;</code> - Betonter Text (kursiv)</li>
+    </ul>
+    
+    <h2>3. Links und Navigation</h2>
+    <pre><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"https://beispiel.at"</span> <span class="attr">target</span>=<span class="value">"_blank"</span><span class="tag">&gt;</span>Link<span class="tag">&lt;/a&gt;</span></pre>
+    <pre><span class="tag">&lt;nav&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/seite1"</span><span class="tag">&gt;</span>Seite 1<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="value">"/seite2"</span><span class="tag">&gt;</span>Seite 2<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;/nav&gt;</span></pre>
+    
+    <h2>4. Listen</h2>
+    <pre><span class="tag">&lt;ul&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Unordered Item<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+
+<span class="tag">&lt;ol&gt;</span>
+    <span class="tag">&lt;li&gt;</span>Ordered Item<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></pre>
+    
+    <h2>5. Bilder und Medien</h2>
+    <pre><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"bild.jpg"</span> <span class="attr">alt</span>=<span class="value">"Beschreibung"</span> <span class="attr">width</span>=<span class="value">"300"</span><span class="tag">&gt;</span>
+
+<span class="tag">&lt;figure&gt;</span>
+    <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="value">"bild.jpg"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;figcaption&gt;</span>Bildunterschrift<span class="tag">&lt;/figcaption&gt;</span>
+<span class="tag">&lt;/figure&gt;</span></pre>
+    
+    <h2>6. Tabellen</h2>
+    <pre><span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;thead&gt;</span>
+        <span class="tag">&lt;tr&gt;</span><span class="tag">&lt;th&gt;</span>Spalte 1<span class="tag">&lt;/th&gt;</span><span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/thead&gt;</span>
+    <span class="tag">&lt;tbody&gt;</span>
+        <span class="tag">&lt;tr&gt;</span><span class="tag">&lt;td&gt;</span>Daten<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre>
+    
+    <h2>7. Formulare</h2>
+    <pre><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="value">"/submit"</span> <span class="attr">method</span>=<span class="value">"POST"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"name"</span><span class="tag">&gt;</span>Name:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"text"</span> <span class="attr">id</span>=<span class="value">"name"</span> <span class="attr">name</span>=<span class="value">"name"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+    
+    <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="value">"email"</span><span class="tag">&gt;</span>E-Mail:<span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="value">"email"</span> <span class="attr">id</span>=<span class="value">"email"</span> <span class="attr">name</span>=<span class="value">"email"</span><span class="tag">&gt;</span>
+    
+    <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="value">"submit"</span><span class="tag">&gt;</span>Absenden<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+    
+    <h2>8. Wichtige Attribute</h2>
+    <ul>
+        <li><code>class</code> - CSS-Klassen zuweisen</li>
+        <li><code>id</code> - Eindeutige ID</li>
+        <li><code>style</code> - Inline-Styles</li>
+        <li><code>title</code> - Tooltip beim Hover</li>
+        <li><code>data-*</code> - Benutzerdefinierte Daten</li>
+    </ul>
+    
+    <div class="summary">
+        <h2>Fazit</h2>
+        <p>HTML5 bietet viele semantische Tags die wichtig sind für:
+        <ul>
+            <li>Barrierefreiheit</li>
+            <li>SEO (Suchmaschinen)</li>
+            <li>Code-Wartbarkeit</li>
+        </ul>
+        </p>
+    </div>
+</body>
+</html>

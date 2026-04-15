@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HTML Tags Demo</h1>
+    
+    <section>
+        <h2>Table Tag</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tag</th>
+                    <th>Beschreibung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&lt;table&gt;</td>
+                    <td>Erstellt eine Tabelle</td>
+                </tr>
+                <tr>
+                    <td>&lt;tr&gt;</td>
+                    <td>Table Row - Zeile</td>
+                </tr>
+                <tr>
+                    <td>&lt;th&gt;</td>
+                    <td>Table Header - Kopfzelle</td>
+                </tr>
+                <tr>
+                    <td>&lt;td&gt;</td>
+                    <td>Table Data - Datenzelle</td>
+                </tr>
+                <tr>
+                    <td>&lt;thead&gt;</td>
+                    <td>Tabellen-Kopf</td>
+                </tr>
+                <tr>
+                    <td>&lt;tbody&gt;</td>
+                    <td>Tabellen-Körper</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section>
+        <h2>Form & Input Tags</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Dein Name">
+            
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" placeholder="beispiel@email.at">
+            
+            <label for="sprache">Lieblingssprache:</label>
+            <select id="sprache" name="sprache">
+                <option value="js">JavaScript</option>
+                <option value="py">Python</option>
+                <option value="ts">TypeScript</option>
+                <option value="go">Go</option>
+            </select>
+            
+            <label for="nachricht">Nachricht:</label>
+            <textarea id="nachricht" name="nachricht" rows="4" placeholder="Deine Nachricht..."></textarea>
+            
+            <button type="submit">Absenden</button>
+        </form>
+    </section>
+</body>
+</html>
